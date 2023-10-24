@@ -1,0 +1,93 @@
+/* ==UserStyle==
+@name           Baldwin Material Helper
+@author         Valen
+@namespace      https://userstyles.world/user/JustDownloadin
+@version        1.0
+@description    Shows what objects can get reduced to what materials in Baldwin's Bubbling Brew.
+@license        MIT
+@preprocessor	stylus
+
+
+@var select	helpType "Text location" {"Select...": "0",
+"Text box": "1",
+"Tab names": "2",
+"Both": "3"
+}
+
+==/UserStyle== */
+/*
+Please report any bugs or issues you may have: https://wachi-delectrico.tumblr.com
+
+If you like this, support me!
+https://ko-fi.com/valensart
+https://ko-fi.com/valensart
+https://ko-fi.com/valensart
+*/
+
+@-moz-document url-prefix("https://www1.flightrising.com/trading/baldwin/transmute") {
+   
+	if(helpType=="0") {}
+	
+	if(helpType=="1") or (helpType=="3") {	
+		
+		#ui-id-1.ui-dialog-title {
+			pointer-events: none;
+			padding-left: 1.4em
+			}
+					
+		#ui-id-1.ui-dialog-title:after {
+			pointer-events: auto;
+			content: url(/static/cms/icons/468.png);
+			filter: sepia(100%) saturate(100%) hue-rotate(-50deg) brightness(70%) contrast(250%);
+			position: absolute;
+			top: 1px;
+			left: 2px;
+			}
+			
+		#ui-id-1.ui-dialog-title:hover:after {
+			content: "Food gives Goo." '\A'" Materials give Ooze." '\A'" Apparel gives Slime." '\A'" Familiars give Muck." '\A'" Trinkets give Sludge.";
+			filter: none!important;
+			z-index: 999;
+			display: inline-flex;
+			flex-wrap: wrap;
+			white-space: pre-line;
+			font-weight: normal;
+			color: #222e3d;
+			width: 177px;
+			height: 68px;
+			padding: 5px;
+			border: 1px solid #731d08;
+			border-radius: 5px;
+			background-color: white;
+			box-shadow: 0 0 5px #222e3d;
+			}
+		}
+		
+	if(helpType=="2") or (helpType=="3") {
+		#swaptabs > a.generic-hoard-tab {
+			display: inline-block
+			width: 65px
+			}
+			
+		#swaptabs > a[data-tab-id="food"]::after {
+			content: " (Goo)";
+			}
+			
+		#swaptabs > a[data-tab-id="mats"]::after {
+			content: " (Ooze)";
+			}
+			
+		#swaptabs > a[data-tab-id="app"]::after {
+			content: " (Slime)";
+			}
+			
+		#swaptabs > a[data-tab-id="fam"]::after {
+			content: " (Muck)";
+			}
+			
+		#swaptabs > a[data-tab-id="other"]::after {
+			content: " (Sludge)";
+			}
+		}
+	
+}
