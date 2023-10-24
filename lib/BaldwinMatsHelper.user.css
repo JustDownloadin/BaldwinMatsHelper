@@ -6,6 +6,7 @@
 @description    Shows what objects can get reduced to what materials in Baldwin's Bubbling Brew.
 @license        MIT
 @preprocessor	stylus
+@updateURL	https://github.com/JustDownloadin/BaldwinMatsHelper/raw/main/lib/BaldwinMatsHelper.user.css
 
 
 @var select	helpType "Text location" {"Select...": "0",
